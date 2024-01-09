@@ -1,13 +1,20 @@
+/* Font */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
 }
 
-.title {
+.header {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.header-logo {
+  font-weight: 200;
 }
 
 .container {
@@ -17,95 +24,203 @@
   justify-content: center;
 }
 
-label {
-  display: block;
-  margin-top: 1rem;
-  margin-bottom: 10px;
+.form {
+  padding: 20px 0px;
 }
 
-.address {
+.form > label,
+.form > .form-fielset > label {
+  display: block;
+  font-size: 14px;
+  color: #493b38;
+}
+
+.form > fieldset {
+  margin-top: 20px;
+}
+
+.form > fieldset > legend {
+  font-size: 14px;
+  color: #493b38;
+}
+
+.form > label:not(:first-of-type),
+.form > .form-fielset > label:not(:first-of-type) {
   margin-top: 10px;
 }
 
-.datepicker {
-  background-color: rgb(255, 246, 246);
-  position: absolute;
-  top: calc(100% + 10px);
-  left: 50%;
-  transform: translateX(-50%);
-  user-select: none;
+.form-input {
+  display: block;
+  font-size: 13px;
+  width: 100%;
+  border-radius: 5px;
+  padding: 5px 5px;
+  border: none;
+  background-color: #f7f7f7;
+  color: #493b38;
+}
+.form-input:invalid {
+  background-color: #ffe6e6;
+  box-shadow: 0px 0px 1px #ff0000;
 }
 
-.datepicker-header {
+.form-select {
+  background-color: #f7f7f7;
+  border-radius: 5px;
+  padding: 5px 5px;
+  font-size: 13px;
+  width: 100%;
+  border: none;
+  color: #493b38;
+}
+
+.form-input::placeholder {
+  color: rgba(73, 59, 56, 0.4588235294);
+}
+
+.form-input:focus-visible {
+  outline: none;
+}
+
+.main-page {
+  background-image: linear-gradient(-45deg, #fff8ed, #ffcebe);
+  min-height: 100vh;
   display: flex;
-  justify-content: space-between;
-  padding: 5px;
-}
-
-.datepicker-body {
-  position: relative;
-}
-
-.datepicker-body__days {
-  display: grid;
-  list-style: none;
-  grid-template-columns: repeat(7, 1fr);
-}
-.datepicker-body__days li {
-  width: 2em;
-  height: 2em;
-  text-align: center;
-  border: 1px solid coral;
-  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-transform: uppercase;
 }
 
-.datepicker-body__dates {
-  display: grid;
-  list-style: none;
-  grid-template-columns: repeat(7, 1fr);
-  grid-template-rows: repeat(5, 1fr);
-  gap: 0.1em;
+.main-section {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: rgba(209, 62, 13, 0.0196078431) 0px 20px 25px -5px, rgba(214, 84, 40, 0.0196078431) 0px 10px 10px -5px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
-.datepicker-body__dates li {
-  width: 2em;
-  height: 2em;
-  text-align: center;
-  border: 1px solid coral;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+
+.form-fielset {
+  padding: 10px;
+  border: 1px solid rgba(73, 59, 56, 0.3137254902);
+  border-radius: 5px;
+}
+
+.main-title {
+  border-bottom: 1px solid #ffcebe;
+  font-weight: 400;
+  color: #493b38;
+  padding-bottom: 20px;
+}
+
+.form-cta {
+  padding: 5px 10px;
+  min-width: 180px;
+  color: white;
+  background-color: #493b38;
+  border-radius: 5px;
+  border: none;
   cursor: pointer;
 }
-.datepicker-body__dates li.is-today {
-  color: red;
+
+.form-cta:hover {
+  background-color: rgba(73, 59, 56, 0.8901960784);
 }
-.datepicker-body__dates li.is-active {
-  background-color: darkblue;
+
+.main-link {
+  font-size: 13px;
+  color: #493b38;
+}
+
+.employee-table__controls {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9em;
+  padding: 10px 0px;
+}
+.employee-table__controls-select {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.employee-table__controls-search {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.employee-table__controls label {
+  white-space: nowrap;
+}
+
+.employee-table__header tr th {
+  border-bottom: 1px solid rgba(73, 59, 56, 0.3137254902);
+  font-weight: 400;
+  text-align: left;
+  height: 40px;
+  font-size: 0.95em;
+}
+
+.employee-table {
+  min-width: 1200px;
+  border-collapse: collapse;
+}
+
+.employee-table__body tr td {
+  padding: 5px 10px;
+  color: rgb(85, 85, 85);
+  font-size: 0.85em;
+  border-bottom: 1px solid hsl(0, 0%, 95%);
+}
+.employee-table__body tr td:nth-child(odd) {
+  background-color: hsl(0, 0%, 98%);
+}
+
+.employee-table__sort-icon {
+  cursor: pointer;
+  background-color: rgba(73, 59, 56, 0.1450980392);
   color: white;
+  font-size: 0.6em;
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+  text-align: center;
+  border-radius: 1000px;
+  user-select: none;
+  margin-left: 5px;
+}
+.employee-table__sort-icon.on {
+  background-color: #493b38;
 }
 
-.datepicker-body__date-config {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: blue;
-  top: 0px;
-  left: 0px;
+.employee-table__pagination {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9em;
+  padding: 10px 0px;
+}
+.employee-table__pagination-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.employee-table__pagination-controls button {
+  cursor: pointer;
+}
+.employee-table__pagination-controls button:hover {
+  background-color: #ebebeb;
+}
+.employee-table__pagination-controls button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
-.datepicker-wrapper {
-  position: relative;
+.employee-table__wrapper {
+  margin-top: 10px;
 }
 
-.is-prev-month {
-  opacity: 50%;
-}
-
-.is-next-month {
-  opacity: 50%;
+.table__no-result td {
+  background-color: hsl(0, 0%, 100%) !important;
+  border-bottom: 1px solid hsla(0, 0%, 0%, 0) !important;
 }
 
 /*# sourceMappingURL=main.css.map */
